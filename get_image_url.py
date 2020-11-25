@@ -1,4 +1,5 @@
 import urllib.request
+import time
 
 import flickr
 
@@ -19,3 +20,4 @@ if __name__ == "__main__":
     queries = get_queries(PATH)
     for q in queries:
         flickr.search_photos(q, n=N)
+        time.sleep(1)

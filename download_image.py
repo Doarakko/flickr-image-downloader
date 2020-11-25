@@ -1,5 +1,6 @@
 import glob
 import json
+import time
 import re
 import urllib.request
 
@@ -27,5 +28,6 @@ if __name__ == "__main__":
                 url = flickr.get_url(v)
                 path = "data/{}/{}_{}.jpg".format(dir_name, dir_name, i)
                 download(url, path)
+                time.sleep(1)
 
         print("complete {}".format(dir_name))
