@@ -35,19 +35,30 @@ mv .env.sample .env
 
 2. Enter search keywords in the `data/queries.txt` separated by line breaks
 
-3. Install Python package
+```txt
+dog
+cat
+```
+
+3. Enter the number of images for each query to `get_image_url.py` 
+
+```python
+N = 5
+```
+
+4. Install Python package
 
 ```bash
 poetry install
 ```
 
-4. Request to flickr and get image url
+5. Request to flickr and get image url
 
 ```bash
 poetry run python get_image_url.py
 ```
 
-5. Download image
+6. Download image
 
 ```bash
 poetry run python download_image.py
