@@ -1,7 +1,8 @@
 import glob
 import json
-import time
+import os
 import re
+import time
 import urllib.request
 
 import flickr
@@ -18,16 +19,24 @@ def download(url, path):
 
 
 if __name__ == "__main__":
-    file_paths = glob.glob("data/*/*.json")
+    file_paths = glob.glob("data/*.json")
+
+    if not os.path.exists("data/images"):
+        os.makedirs("data/images")
 
     for path in file_paths:
-        dir_name = re.search(r"data/(.+)/.+", path).group(1)
+        file_name = re.search(r"data/(.+).json", path).group(1)
+
+        dir = "data/images/{}".format(file_name)
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+
         with open(path, "r") as f:
             resource = json.load(f)
             for i, v in enumerate(resource["photos"]["photo"]):
-                url = flickr.get_url(v)
-                path = "data/{}/{}_{}.jpg".format(dir_name, dir_name, i)
+                id, url = flickr.get_id_and_url(v)
+                path = "{}/{}.jpg".format(dir, id)
                 download(url, path)
                 time.sleep(1)
 
-        print("complete {}".format(dir_name))
+        print("complete {}".format(file_name))

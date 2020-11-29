@@ -27,11 +27,7 @@ def search_photos(q, n=10):
 
 
 def save(response_json, q):
-    dir = "data/{}".format(q)
-    if not os.path.exists(dir):
-        os.makedirs(dir)
-
-    path = "{}/{}.json".format(dir, q)
+    path = "data/{}.json".format(q)
 
     with open(path, "w") as f:
         json.dump(response_json, f)
@@ -39,8 +35,8 @@ def save(response_json, q):
     print("save to {}".format(path))
 
 
-def get_url(photo):
+def get_id_and_url(photo):
     url = "https://farm{}.staticflickr.com/{}/{}_{}.jpg".format(
         str(photo["farm"]), photo["server"], photo["id"], photo["secret"]
     )
-    return url
+    return photo["id"], url

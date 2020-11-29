@@ -2,20 +2,21 @@
 
 ```
 data
-├── cat
-│   ├── cat.json
-│   ├── cat_0.jpg
-│   ├── cat_1.jpg
-│   ├── cat_2.jpg
-│   ├── cat_3.jpg
-│   └── cat_4.jpg
-├── dog
-│   ├── dog.json
-│   ├── dog_0.jpg
-│   ├── dog_1.jpg
-│   ├── dog_2.jpg
-│   ├── dog_3.jpg
-│   └── dog_4.jpg
+├── cat.json
+├── dog.json
+├── images
+│   ├── cat
+│   │   ├── 33415747642.jpg
+│   │   ├── 37204248186.jpg
+│   │   ├── 38374394775.jpg
+│   │   ├── 45591380462.jpg
+│   │   └── 46106952034.jpg
+│   └── dog
+│       ├── 32996282558.jpg
+│       ├── 33164281888.jpg
+│       ├── 39731736542.jpg
+│       ├── 40693090171.jpg
+│       └── 45160323522.jpg
 └── queries.txt
 ```
 
@@ -27,7 +28,7 @@ data
 
 ## Usage
 
-1. Enter your API Key to .env
+1. Enter your API Key to `.env`
 
 ```bash
 mv .env.sample .env
