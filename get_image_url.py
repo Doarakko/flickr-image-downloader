@@ -19,5 +19,5 @@ def get_queries(path):
 if __name__ == "__main__":
     queries = get_queries(PATH)
     for q in queries:
-        flickr.search_photos(q, n=N)
+        flickr.search_photos(q, n=N, sort="relevance")
         time.sleep(1)

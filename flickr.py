@@ -9,13 +9,13 @@ load_dotenv()
 API_KEY = os.environ.get("API_KEY")
 
 
-def search_photos(q, n=10):
+def search_photos(q, n=10, sort="interestingness-desc"):
     params = {
         "method": "flickr.photos.search",
         "api_key": API_KEY,
         "text": q,
         "per_page": n,
-        "sort": "interestingness-desc",
+        "sort": sort,
         "format": "json",
         "nojsoncallback": "1",
     }
