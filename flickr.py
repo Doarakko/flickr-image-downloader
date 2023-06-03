@@ -1,6 +1,5 @@
 import json
 import os
-from urllib.request import urlopen, urlretrieve
 
 import requests
 from dotenv import load_dotenv

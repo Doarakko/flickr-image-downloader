@@ -1,9 +1,14 @@
-import urllib.request
+import os
 import time
+
+from dotenv import load_dotenv
 
 import flickr
 
-N = 5
+load_dotenv()
+
+os.environ.get("N")
+
 PATH = "data/queries.txt"
 
 

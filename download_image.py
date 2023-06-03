@@ -3,17 +3,19 @@ import json
 import os
 import re
 import time
-import urllib.request
+
+import requests
 
 import flickr
 
 
 def download(url, path):
     try:
-        with urllib.request.urlopen(url) as w:
-            data = w.read()
-            with open(path, mode="wb") as f:
-                f.write(data)
+        res = requests.get(url)
+        image = res.content
+           
+        with open(path, mode="wb") as f:
+            f.write(image)
     except Exception as e:
         print("failed to download {}: {}".format(url, e))
 
