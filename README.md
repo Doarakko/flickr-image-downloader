@@ -1,4 +1,4 @@
-# flickr image download
+# flickr image downloader
 
 ```text
 data
