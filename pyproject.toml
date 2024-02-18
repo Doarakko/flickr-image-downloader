@@ -9,7 +9,7 @@ packages = [{include = "flickr_image_download"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.31.0"
-python-dotenv = "^1.0.0"
+python-dotenv = "^1.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
